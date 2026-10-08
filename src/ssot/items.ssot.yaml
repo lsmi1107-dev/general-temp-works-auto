@@ -1,0 +1,109 @@
+version: v4
+updated: 2026-10-08
+project: 공통가설공사_자동내역
+note: 설치형 추후 구현 - 임대형만 활성화
+
+projectContext:
+  siteArea: 3500
+  grossFloorArea: 10000
+  buildingUse: 업무시설
+  structure: 철근콘크리트조
+  groundFloors: 15
+  undergroundFloors: 3
+  maxHeight: 60
+  durationMonths: 12
+  totalCost: 0
+
+standardTable_2_1_2:
+  - range: [0, 1.5]
+    supervisor: 30
+    contractor: 30
+    warehouse: 27
+  - range: [1.5, 3]
+    supervisor: 40
+    contractor: 50
+    warehouse: 30
+  - range: [3, 9]
+    supervisor: 50
+    contractor: 70
+    warehouse: 40
+  - range: [9, 30]
+    supervisor: 70
+    contractor: 90
+    warehouse: 50
+  - range: [30, 90]
+    supervisor: 100
+    contractor: 140
+    warehouse: 70
+  - range: [90, 150]
+    supervisor: 140
+    contractor: 210
+    warehouse: 80
+  - range: [150, 300]
+    supervisor: 180
+    contractor: 300
+    warehouse: 90
+  - range: [300, 500]
+    supervisor: 190
+    contractor: 330
+    warehouse: 95
+  - range: [500, 999999]
+    supervisor: 210
+    contractor: 360
+    warehouse: 100
+
+items:
+  - id: TEMP-B01
+    name: 감독자용 사무실
+    code: TEMP-B01
+    type: office
+    target: supervisor
+    unit: 식
+  - id: TEMP-B02
+    name: 조립식가설창고
+    code: TEMP-B02
+    type: warehouse
+    target: warehouse
+    unit: 식
+  - id: TEMP-B03
+    name: 도급자용 사무실
+    code: TEMP-B03
+    type: office
+    target: contractor
+    unit: 식
+  - id: TEMP-B04
+    name: 조립식가설시험실
+    code: TEMP-B04
+    type: lab
+    target: lab
+    unit: 식
+  - id: TEMP-B05
+    name: 이동식화장실(대소변겸용)
+    code: TEMP-B05
+    type: toilet
+    unit: 식
+  - id: TEMP-B06
+    name: 자동차세륜기 설치 및 해체 - 8톤
+    code: TEMP-B06
+    type: equipment
+    unit: 식
+  - id: TEMP-B07
+    name: 조립식가설울타리
+    code: TEMP-B07
+    type: fence
+    unit: 식
+  - id: TEMP-B08
+    name: 조립식가설출입문
+    code: TEMP-B08
+    type: gate
+    unit: 식
+
+containers:
+  - id: C-3x6
+    spec: 3.0 x 6.0
+    area: 18
+    rent: 350000
+  - id: C-3x9
+    spec: 3.0 x 9.0
+    area: 27
+    rent: 550000
